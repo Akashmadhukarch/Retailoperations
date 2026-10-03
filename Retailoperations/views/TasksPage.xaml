@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Retailoperations.views.TasksPage"
+    Title="Tasks">
+
+    <Grid Padding="20">
+
+        <Grid RowDefinitions="Auto,*"
+              RowSpacing="15">
+
+            <!-- Header -->
+
+            <VerticalStackLayout
+                Grid.Row="0"
+                Spacing="5">
+
+                <Label
+                    Text="Tasks"
+                    FontSize="28"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="Manage your assigned tasks"
+                    FontSize="14" />
+                <Button
+                    x:Name="CreateTaskButton"
+                    Text="Create New Task"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    Clicked="CreateTask_Clicked" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Task List -->
+
+            <CollectionView
+                Grid.Row="1"
+                ItemsSource="{Binding Tasks}"
+                SelectionMode="None">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Border
+                            Padding="15"
+                            Margin="0,0,0,12"
+                            StrokeShape="RoundRectangle 12">
+
+                            <Grid
+                                RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                                ColumnDefinitions="*,Auto"
+                                RowSpacing="8"
+                                ColumnSpacing="10">
+
+                                <!-- Task Title -->
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding Title}"
+                                    FontSize="18"
+                                    FontAttributes="Bold" />
+
+                                <!-- Status -->
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding Status}"
+                                    FontSize="13"
+                                    HorizontalOptions="End" />
+
+                                <!-- Description -->
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2"
+                                    Text="{Binding Description}"
+                                    FontSize="14" />
+
+                                <!-- Priority -->
+
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    Text="{Binding Priority, StringFormat='Priority: {0}'}"
+                                    FontSize="13" />
+
+                                <!-- Due Date -->
+
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Text="{Binding DueDate, StringFormat='Due: {0:dd MMM HH:mm}'}"
+                                    FontSize="13"
+                                    HorizontalOptions="End" />
+                                <Label
+    Grid.Row="3"
+    Grid.ColumnSpan="2"
+    Text="{Binding AssignedEmployeeName, StringFormat='Assigned To: {0}'}"
+    FontSize="13" />
+
+                                <!-- Action -->
+
+                                <Button
+    Grid.Row="5"
+    Grid.ColumnSpan="2"
+    Text="View Task"
+    HeightRequest="40"
+    CornerRadius="8"
+    Clicked="ViewTask_Clicked" />
+
+                            </Grid>
+
+                        </Border>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

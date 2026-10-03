@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Retailoperations.views.EmployeesPage"
+    Title="Employees">
+
+    <Grid Padding="20">
+
+        <Grid RowDefinitions="Auto,*"
+              RowSpacing="15">
+
+            <!-- Header -->
+
+            <VerticalStackLayout
+                Grid.Row="0"
+                Spacing="5">
+
+                <Label
+                    Text="Employees"
+                    FontSize="28"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="Manage store employees"
+                    FontSize="14" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Employee List -->
+
+            <CollectionView
+                Grid.Row="1"
+                ItemsSource="{Binding Employees}"
+                SelectionMode="None">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Border
+                            Padding="15"
+                            Margin="0,0,0,12">
+
+                            <Grid
+                                RowDefinitions="Auto,Auto,Auto,Auto"
+                                ColumnDefinitions="*,Auto"
+                                RowSpacing="6">
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding Name}"
+                                    FontSize="18"
+                                    FontAttributes="Bold" />
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding Status}"
+                                    FontSize="13"
+                                    HorizontalOptions="End" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2"
+                                    Text="{Binding Role}"
+                                    FontSize="14" />
+
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.ColumnSpan="2"
+                                    Text="{Binding Email}"
+                                    FontSize="13" />
+
+                                <Label
+                                    Grid.Row="3"
+                                    Grid.ColumnSpan="2"
+                                    Text="{Binding Phone}"
+                                    FontSize="13" />
+
+                            </Grid>
+
+                        </Border>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

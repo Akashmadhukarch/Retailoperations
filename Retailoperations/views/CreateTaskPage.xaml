@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Retailoperations.views.CreateTaskPage"
+    Title="Create Task">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="15">
+
+            <Label
+                Text="Create New Task"
+                FontSize="28"
+                FontAttributes="Bold" />
+
+            <Entry
+                Placeholder="Task Title"
+                Text="{Binding Title}" />
+
+            <Editor
+                Placeholder="Task Description"
+                HeightRequest="120"
+                Text="{Binding Description}" />
+
+            <Picker
+                Title="Select Priority"
+                ItemsSource="{Binding Priorities}"
+                SelectedItem="{Binding Priority}" />
+
+            <DatePicker
+                Date="{Binding DueDate}" />
+
+            <Picker
+                Title="Assign Employee"
+                ItemsSource="{Binding Employees}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedItem="{Binding SelectedEmployee}" />
+
+            <Button
+                Text="Create Task"
+                HeightRequest="50"
+                CornerRadius="10"
+                Command="{Binding CreateTaskCommand}" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Shell
+    x:Class="Retailoperations.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Retailoperations.views"
+    Title="Retail Operations">
+
+    <!-- Role Selection Page -->
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage" />
+
+    <!-- Manager Login Page -->
+    <ShellContent
+        Title="Manager Login"
+        ContentTemplate="{DataTemplate views:ManagerLoginPage}"
+        Route="ManagerLoginPage" />
+
+    <!-- Employee Login Page -->
+    <ShellContent
+        Title="Employee Login"
+        ContentTemplate="{DataTemplate views:EmployeeLoginPage}"
+        Route="EmployeeLoginPage" />
+
+    <!-- Dashboard Page (Manager) -->
+    <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate views:DashboardPage}"
+        Route="DashboardPage" />
+
+    <!-- Tasks Page -->
+    <ShellContent
+        Title="Tasks"
+        ContentTemplate="{DataTemplate views:TasksPage}"
+        Route="TasksPage" />
+
+    <!-- Create Task Page -->
+    <ShellContent
+        Title="Create Task"
+        ContentTemplate="{DataTemplate views:CreateTaskPage}"
+        Route="CreateTaskPage" />
+
+    <!-- Employees Page -->
+    <ShellContent
+        Title="Employees"
+        ContentTemplate="{DataTemplate views:EmployeesPage}"
+        Route="EmployeesPage" />
+
+    <!-- Task Details Page -->
+    <ShellContent
+        Title="Task Details"
+        ContentTemplate="{DataTemplate views:TaskDetailsPage}"
+        Route="TaskDetailsPage" />
+
+</Shell>
